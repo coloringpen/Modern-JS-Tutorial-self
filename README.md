@@ -1,2 +1,2 @@
-# hello-github
-my first test github repository
+# Nomad coder 자습장
+
