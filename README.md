@@ -1,2 +1,2 @@
-# Nomad coder 자습장
+# Modern JS Tutorial workbook
 
