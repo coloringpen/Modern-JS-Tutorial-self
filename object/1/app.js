@@ -52,3 +52,12 @@ console.log(user5.name);
 
 // keys made of multiple words cannot be read with dot method
 // console.log(user4."likes birds") error : unexpected string
+
+// square bracket notation
+let user6 = {};
+
+//set
+user6['like birds'] = true;
+
+//get
+console.log(user6['like birds']);
