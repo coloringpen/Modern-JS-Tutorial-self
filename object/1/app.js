@@ -61,3 +61,7 @@ user6['like birds'] = true;
 
 //get
 console.log(user6['like birds']);
+
+//delete
+
+delete user6['like birds'];
