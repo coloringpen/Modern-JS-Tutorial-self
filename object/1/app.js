@@ -85,3 +85,50 @@ user6.age = 30;
 
 // let key_1 = 'name';
 // console.log(user.key); not error but undefined
+
+// let fruit = prompt('어떤 과일을 구매하시겠습니까?', 'apple');
+// let bag = {
+//   [fruit]: 5,
+// };
+
+// console.log(bag.pear); 이렇게 다른 과일의 이름을 찾을 경우 error는 안나지만
+// undefined라고 뜸. 정의 되지 않은 것들을 사용하려고 할 때는 항상 undefined
+// 정의되지 않은 것들은 유효한 변수 이름은 맞지만 어디 저장해둔 게 아닐 때에
+
+// let fruit = prompt('어떤 과일을 구매하시겠습니까?', 'peach');
+// let bag = {};
+
+// bag[fruit] = 5;
+// console.log(bag[fruit]);
+
+// 대괄호를 이용한 좀 더 복잡한 표현식을 사용
+let fruit = 'apple';
+let bag = {
+  [fruit + 'computers']: 5,
+};
+
+/** 단축 프로퍼티 */
+/* 사용할 수 있는 경우 :  변수이름 = 프로퍼티 키 = 프로퍼티 값 */
+// console.log(bag);
+
+// function makeUser(name, age) {
+//   return {
+//     name: name,
+//     age: age,
+//   };
+// }
+
+// let user7 = makeUser('John', 30);
+// console.log(user7.name);
+
+function makeUser(name, age) {
+  return {
+    name,
+    age,
+  };
+}
+
+let user8 = makeUser('helen', 26);
+console.log(user8);
+
+// let user9 = { name name:name과 같음, age: 30 };
