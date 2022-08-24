@@ -65,3 +65,23 @@ console.log(user6['like birds']);
 //delete
 
 delete user6['like birds'];
+console.log(user6);
+
+user6[123] = 'this is the key name';
+console.log(user6);
+
+// user6[blue] = 'this is color blue';
+// console.log(user6); error! blue is not defined at ...
+// blue는 유효한 변수이름인데, 그래서 변수로 읽었는데 정의가 안돼있음!!
+// 그러므로 blue가 변수로 읽히지 않고 그대로 키값으로 들어가길 바란다면
+// 문자열로 표기를 해줘야함
+
+user6.name = 'John';
+user6.age = 30;
+
+// let key = prompt('사용자의 어떤 정보를 얻고 싶으신가요?', 'name');
+
+// console.log(user6[key]);
+
+// let key_1 = 'name';
+// console.log(user.key); not error but undefined
