@@ -132,3 +132,19 @@ let user8 = makeUser('helen', 26);
 console.log(user8);
 
 // let user9 = { name name:name과 같음, age: 30 };
+
+let user10 = {
+  name,
+  age: 30,
+};
+
+console.log(user10);
+// 단축 프로퍼티와 일반 프로퍼티 함께 쓰는 것도 가능
+
+let user11 = {
+  for: 1,
+  let: 2,
+  return: 3,
+};
+
+console.log(user11.for + user11.let + user11.return);
