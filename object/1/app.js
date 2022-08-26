@@ -148,3 +148,20 @@ let user11 = {
 };
 
 console.log(user11.for + user11.let + user11.return);
+// 프로퍼티 이름은 예약어로도 가능. 문자형과 심볼형이라면 어떤것으로도 가능
+
+let obj = {
+  0: 'test',
+};
+
+console.log(obj['0']);
+console.log(obj[0]);
+// property names with other data types turn into String
+
+let obj1 = {};
+obj1.__proto__ = 5;
+console.log(obj1.__proto__);
+// ignores primitive data type defining
+
+let user12 = {};
+console.log(user12.noSuchProperty === undefined);
