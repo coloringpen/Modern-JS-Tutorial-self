@@ -165,3 +165,14 @@ console.log(obj1.__proto__);
 
 let user12 = {};
 console.log(user12.noSuchProperty === undefined);
+
+let user13 = {
+  name: 'John',
+  age: 30,
+};
+
+user13.sayHi = function () {
+  console.log('안녕하세요!');
+};
+
+user13.sayHi();
