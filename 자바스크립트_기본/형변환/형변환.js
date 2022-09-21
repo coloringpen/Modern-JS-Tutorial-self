@@ -25,3 +25,12 @@ console.log(Number(true));
 console.log(Number(false));
 console.log(Number(undefined));
 console.log(Number(null));
+
+/* 불린형으로 변환 */
+console.log(Boolean(1));
+console.log(Boolean(0));
+console.log(Boolean(null));
+console.log(Boolean(' ')); //true
+console.log(Boolean('fjoa'));
+console.log(Boolean(undefined));
+console.log(Boolean(''));
