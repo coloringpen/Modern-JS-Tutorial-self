@@ -47,3 +47,45 @@ let apples = '2';
 let oranges = '3';
 console.log(apples + oranges); // 문자열 23
 console.log(+apples + +oranges); // 숫자형 5. 단항 연산자 +가 이항연산자 +보다 우선순위가 높다
+
+/* 할당 연산자 '=' ; 우선 순위가 낮아서 표현식에서 계산이 먼저 이루어지고 그 결과가 마지막으로 할당되는 이유*/
+let equalIsNotEqual = 2 * 2 + 1;
+console.log(equalIsNotEqual);
+
+/* 값을 반환하는 할당 연산자; 할당 연산자는 할당된 값을 반환한다! */
+let equal1 = 1;
+let equal2 = 2;
+
+let equal3 = 3 - (equal1 = equal2 + 1);
+
+console.log(equal1);
+console.log(equal3);
+
+/* 할당 연산자 체이닝 */
+let equal4, equal5, equal6;
+equal4 = equal5 = equal6 = 2 + 2;
+console.log(equal4);
+console.log(equal5);
+console.log(equal6);
+
+equal4 = 3 + 3;
+equal5 = equal4;
+equal6 = equal5;
+console.log(equal4);
+console.log(equal5);
+console.log(equal6);
+
+/* 복합 할당 연산자; 변수에 연산자 적용, 그리고 그 결과를 같은 변수에 저장 */
+let combi1 = 2;
+combi1 = combi1 + 5;
+combi1 = combi1 + 2;
+console.log(combi1);
+
+let combi2 = 2;
+combi2 += 5;
+combi2 *= 2;
+console.log(combi2);
+
+let combi3 = 2;
+combi3 *= 3 + 5;
+console.log(combi3);
