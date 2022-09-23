@@ -89,3 +89,48 @@ console.log(combi2);
 let combi3 = 2;
 combi3 *= 3 + 5;
 console.log(combi3);
+
+/* 증가, 감소 연산자; 변수!에만 사용가능!! 값에 직접적 사용불가!!(에러남!!)*/
+let counter = 2;
+counter++;
+console.log(counter);
+
+let counter2 = 3;
+counter2--;
+console.log(counter2);
+
+/* 전위형과 후위형의 반환값 차이 */
+let counter3 = 1;
+let counter3_1 = ++counter3;
+// counter3에 1이 늘어나라고 명령한 것이므로,
+// counter3도 1이 늘어나면서 변수 counter3_1이 동시에 할당된다는 것을 명심!!
+console.log(counter3);
+console.log(counter3_1);
+
+let counter4 = 1;
+let counter4_1 = counter4++;
+console.log(counter4);
+console.log(counter4_1); // 원래값을 남겨두고 싶을때 후위형 사용하기
+
+let counter5 = 0;
+counter5++;
+++counter5;
+console.log(counter5);
+
+let counter6 = 0;
+console.log(++counter6);
+
+let counter7 = 0;
+console.log(counter7);
+
+let counter8 = 1;
+console.log(2 * ++counter8);
+
+let counter9 = 1;
+console.log(2 * counter9++);
+
+//웬만하면 코드 한줄엔 특정동작 하나만 작성하기!
+let counter10 = 1;
+console.log(2 * counter10);
+counter10++;
+console.log(counter10);
