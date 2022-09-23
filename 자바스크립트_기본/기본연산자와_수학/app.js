@@ -134,3 +134,20 @@ let counter10 = 1;
 console.log(2 * counter10);
 counter10++;
 console.log(counter10);
+
+/* 쉼표 연산자; 마지막 표현식의 평가 결과만 반환! 우선순위 낮음(괄호 중요!)! */
+let comma1 = (1 + 2, 3 + 4);
+console.log(comma1);
+
+// let comma2 = 1 + 2, 3 + 4 뜬금없이 나오는 7
+// console.log(comma2) Error!Unexpected number
+
+let num1 = null;
+let num2 = null;
+let num3 = null;
+
+for (num1 = 1, num2 = 3, num3 = num1 * num2; num1 < 10; num1++) {
+  console.log(num1);
+  console.log(num2);
+  console.log(num3); // 계속 3. num1이 변한대로 재할당이 일어나지 않는다. 쉼표 부분들은 num1 빼고 한 번 일어나고 끝인듯
+}
