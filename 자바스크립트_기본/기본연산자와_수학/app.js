@@ -32,3 +32,18 @@ console.log(2 + 2 + '1');
 /* '+' 외의 다른 산술 연산자가 문자형 피연산자를 다루는 모습 ; 전부 숫자형으로 변함 */
 console.log(6 - '2'); // 4 숫자형 결과
 console.log('6' / '2'); // 3
+
+/* 단항 연산자 +와 숫자형으로의 변환 */
+let onlyPlus1 = 1;
+console.log(+onlyPlus1); // 1
+
+let onlyPlus2 = -2;
+console.log(+onlyPlus2); // -2
+
+console.log(+true); // 1
+console.log(+''); // 0
+
+let apples = '2';
+let oranges = '3';
+console.log(apples + oranges); // 문자열 23
+console.log(+apples + +oranges); // 숫자형 5. 단항 연산자 +가 이항연산자 +보다 우선순위가 높다
