@@ -65,3 +65,15 @@ console.log(true && true);
 console.log(false && true);
 console.log(true && false);
 console.log(false && false);
+
+/* if문과 AND 연산자 함께 활용 */
+let hourAnd = 12;
+let minuteAnd = 30;
+
+if (hourAnd == 12 && minuteAnd == 30) {
+  console.log('현재 시각은 12시 30분 입니다!');
+}
+
+if (1 && 0) {
+  console.log('if문에 falsy가 있으므로 여기는 실행되지 않는다');
+}
