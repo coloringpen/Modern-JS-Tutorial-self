@@ -77,3 +77,28 @@ if (hourAnd == 12 && minuteAnd == 30) {
 if (1 && 0) {
   console.log('if문에 falsy가 있으므로 여기는 실행되지 않는다');
 }
+
+/* 첫번째 falsy를 찾는 AND연산자 '&&' */
+console.log(1 && 0);
+console.log(1 && 5);
+console.log(null && 5);
+console.log(0 && '아무거나 와도 상관 없슈');
+console.log(1 && 2 && null && 3);
+console.log(1 && 2 && 3);
+
+/* &&의 우선순위는 ||보다 높다! */
+let aAnd = 1;
+let bAnd = 2;
+let cAnd = 3;
+let dAnd = 4;
+console.log(
+  ((aAnd && bAnd) || (cAnd && dAnd)) == ((aAnd && bAnd) || (cAnd && dAnd))
+); /* 원래 앞쪽은 괄호 안 넣어도 됐음...*/
+
+/* 결과는 같아도 코드의 의도를 위해 if문 대신 ||나 &&를 쓰진 말기 */
+let x = 1;
+x > 0 && console.log('0보다 큽니다');
+
+if (x > 0) {
+  console.log('0보다 큽니다!');
+}
