@@ -54,3 +54,14 @@ console.log('hihi') || true; // console.log자체도 truthy로 변환될 수 있
 console.log(Boolean(console.log('hihi')));
 // false. 위도 truthy는 아니지만 일단 연산 순서에 따라 console.log가 실행되는거군...
 // 연산을 할 때는 딱! 하나씩만 바라본다!!
+
+/** &&(AND) */
+let and1 = true;
+let and2 = true;
+let resultAnd = and1 && and2;
+console.log(resultAnd);
+
+console.log(true && true);
+console.log(false && true);
+console.log(true && false);
+console.log(false && false);
