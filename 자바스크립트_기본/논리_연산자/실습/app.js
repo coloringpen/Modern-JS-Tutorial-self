@@ -102,3 +102,18 @@ x > 0 && console.log('0보다 큽니다');
 if (x > 0) {
   console.log('0보다 큽니다!');
 }
+
+/** !(NOT) 해당 연산은 항상 불린형을 반환한다! */
+let valueNot = 3;
+let resultNot = !valueNot;
+console.log(resultNot);
+
+console.log(!true);
+console.log(!0);
+
+/* !!은 해당 값을 불린형으로 변환 */
+console.log(!!'not empty string');
+console.log(!!null);
+// Boolean()과 같은 효과
+console.log(Boolean('not empty string'));
+console.log(Boolean(null));
