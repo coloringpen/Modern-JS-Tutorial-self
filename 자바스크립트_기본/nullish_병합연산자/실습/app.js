@@ -1,4 +1,4 @@
-/** nullish 병합 연산자 '?? */
+/** nullish 병합 연산자 '?? 변수에 기본값을 할당하는 용도로 쓰일 수 있음! */
 let a = 'apple';
 let b = 'pear';
 let x = a ?? b;
