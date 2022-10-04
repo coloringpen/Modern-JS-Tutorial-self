@@ -55,4 +55,25 @@ for (; i8 < 4; ) {
   console.log(i8++);
 }
 // while ( i8 < 4 )나 마찬가지
-// for(;;){} 으로 보든 구성요소 생략시 무한반복문 만들어짐
+// for(;;){} 으로 보든 구성요소 생략시 무한반복문 만들어짐 >> 당연히 조건문이 없으므로!
+
+/** 반복문 빠져나오기 */
+// let sum = 0;
+
+// while (true) {
+//   let value = +prompt('숫자를 입력하시오');
+//   if (!value) break; // 사용자가 입력한 값이 없으면 멈춤
+//   sum += value;
+// }
+
+// console.log(sum);
+
+// let sum = 0;
+
+// while (true) { // break를 하지 않는 이상 반복문
+//   let value = +prompt('숫자 넣으쇼');
+//   if (!value) break;
+//   sum += value;
+// }
+
+// console.log(sum);
