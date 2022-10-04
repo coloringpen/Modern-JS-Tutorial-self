@@ -106,3 +106,29 @@ for (let i = 0; i < 10; i++) {
   }
   // ( i < 5 ) ? console.log( 1 ) : continue 불가능!!
 }
+
+/** break/continue와 레이블. 여러개의 충첩 반복문을 한번에 빠져나와야 하는 경우 사용가능! */
+// outer: for (let i = 0; i < 3; i++) {
+//   for (let j = 0; j < 3; j++) {
+//     let input = prompt(`${i}+${j}의 값`);
+//     if (!input) break outer;
+//   }
+// }
+
+// console.log('완료!');
+
+// let correct = 0;
+// let wrong = 0;
+// outer1: for (let i = 0; i < 4; i++) {
+//   for (let j = 0; j < 3; j++) {
+//     let input = +prompt(`${i}+${j}의 값을 쓰시오`);
+//     if (input == i + j) {
+//       correct += 1;
+//     } else {
+//       alert('어려우면 다른 거 합시다~!');
+//       continue outer1;
+//     }
+//   }
+// }
+
+// console.log(`맞은 갯수 : ${correct}`);
