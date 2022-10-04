@@ -16,3 +16,11 @@ while (i3) {
   console.log(i3);
   i3--;
 }
+
+/** 'do...while' 반복문 */
+let i4 = 0;
+
+do {
+  console.log(i4);
+  i4++;
+} while (i < 3);
