@@ -77,3 +77,32 @@ for (; i8 < 4; ) {
 // }
 
 // console.log(sum);
+
+/** 다음 반복으로 넘어가기 */
+for (let i = 0; i < 10; i++) {
+  // 홀수 출력
+  if (i % 2 == 0) continue;
+  console.log(i);
+}
+
+for (let i = 0; i < 11; i++) {
+  if (i % 2 == 1 || i == 0) continue; // 짝수 출력
+  console.log(i);
+}
+
+// continue는 중첩을 줄여준다
+for (let i = 0; i < 10; i++) {
+  if (i % 2) {
+    console.log(i);
+  }
+}
+
+// '?'오른쪽에 break나 continue를 사용할 순 없다
+for (let i = 0; i < 10; i++) {
+  if (i < 5) {
+    console.log(i);
+  } else {
+    continue;
+  }
+  // ( i < 5 ) ? console.log( 1 ) : continue 불가능!!
+}
