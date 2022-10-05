@@ -69,3 +69,22 @@ let from2 = 'Cindy';
 
 showMessage5(from2, 'Hello');
 console.log(from2);
+
+/** 기본값 */
+function showMessage6(from, text = 'no text given') {
+  let message = from + ': ' + text;
+  console.log(message);
+}
+
+showMessage6('Kate');
+
+/* 복잡한 표현식의 기본값 */
+function anotherFunction() {
+  return 'Hi';
+}
+
+function showMessage7(from, text = anotherFunction()) {
+  console.log(from + ' says, ' + text);
+}
+
+showMessage7('Anna');
