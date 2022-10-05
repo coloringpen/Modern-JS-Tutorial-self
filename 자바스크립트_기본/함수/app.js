@@ -50,3 +50,22 @@ function showMessage3() {
 
 showMessage3(); // Hello, Babara 함수는 내부변수 userName3 사용
 console.log(userName3); // Charlotte 외부변수 userName3는 아무일 없음
+
+/** 매개변수 */
+function showMessage4(from, text) {
+  console.log(from + ': ' + text);
+}
+
+showMessage4('Ann', 'Hello!');
+showMessage4('Ann', "What's up?");
+
+function showMessage5(from2, text) {
+  from2 = '*' + from2 + '*'; // 할당연산자는 이 중에서 가장 마지막에 연산됨! 그래서 오른쪽부터 연산 시작됨
+
+  console.log(from2 + ': ' + text);
+}
+
+let from2 = 'Cindy';
+
+showMessage5(from2, 'Hello');
+console.log(from2);
