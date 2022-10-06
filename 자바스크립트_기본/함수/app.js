@@ -88,3 +88,45 @@ function showMessage7(from, text = anotherFunction()) {
 }
 
 showMessage7('Anna');
+
+/** 매개변수 기본값을 설정할 수 있는 또 다른 방법 */
+function showMessage8(text) {
+  if (text === undefined) {
+    text = '빈문자열';
+  }
+  console.log(text);
+}
+
+showMessage8();
+showMessage8(88);
+
+function showMessage9(text) {
+  text = text || '빈문자열'; // 반환값을 사용하려면 할당해서 사용할 것
+  // text로 어떤 값을 설정할지 정하는 것
+
+  console.log(text);
+}
+
+showMessage9();
+showMessage9('ahaha');
+showMessage9(0); // ||사용할 경우, falsy값을 처리하진 못함
+showMessage9('');
+
+function showMessage10(text) {
+  text = text ?? '빈문자열';
+  console.log(text);
+}
+
+showMessage10();
+showMessage10('ahaha');
+showMessage10(0); // ??의 경우, falsy값까지 undefined와 구분해서 사용할 수 있음
+showMessage10('');
+
+function showCount(count) {
+  // 반환값을 어떤식으로 이용할 것인지 잘 생각하기
+  console.log(count ?? 'unknown');
+}
+
+showCount();
+showCount(null);
+showCount(0);
