@@ -130,3 +130,11 @@ function showCount(count) {
 showCount();
 showCount(null);
 showCount(0);
+
+/** 반환값 */
+function sum(a, b) {
+  return a + b;
+}
+
+let result = sum(1, 2);
+console.log(result);
