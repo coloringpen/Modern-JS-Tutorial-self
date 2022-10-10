@@ -138,3 +138,54 @@ function sum(a, b) {
 
 let result = sum(1, 2);
 console.log(result);
+
+/* 지시자 return과 실행흐름이 만나는 순간 함수 실행은 즉시 중단됨 */
+function checkAge(age) {
+  if (age >= 18) {
+    return true;
+  } else {
+    return confirm('did you get an agreement from your parents?');
+    // consfirm 함수는 ok시 true 반환, 아니면 false 반환
+  }
+}
+
+// let age = prompt('give me your age');
+
+// if (checkAge(age)) {
+//   console.log('allow access');
+// } else {
+//   console.log('shutting access');
+// }
+
+/* return만 명시하는 것도 가능 */
+function showMovie(age) {
+  if (!checkAge(age)) {
+    return;
+  }
+  console.log('영화상영');
+}
+
+// showMovie(15);
+
+/* return문이 없거나 return지시자'만' 있는 함수 >> undefined 반환 */
+function doNothing() {}
+console.log(doNothing() === undefined);
+console.log(Boolean(doNothing)); // 함수 그 자체는 true
+
+/* return과 반환값 사이에 줄 삽입은 하지 말것. */
+function noReturn() {
+  return; // js는 return문 끝에 세미콜론을 자동으로 삽입
+  ('this is not working!!'); // 그러므로 return문에 값이 연결된 것으로 인식 못함
+}
+
+// 반환될 표현식을 여러줄에 거쳐 작성하고 싶다면, 괄호를 사용해서 return문과 연결시킬 것
+function thisWorks(hihi) {
+  return {
+    if(hihi) {
+      console.log('hoohoo');
+    },
+  };
+}
+
+console.log(noReturn());
+console.log(thisWorks(11)); //{if: ƒ}if: ƒ if(hihi)[[Prototype]]...
