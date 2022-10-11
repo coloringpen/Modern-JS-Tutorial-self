@@ -189,3 +189,33 @@ function thisWorks(hihi) {
 
 console.log(noReturn());
 console.log(thisWorks(11)); //{if: ƒ}if: ƒ if(hihi)[[Prototype]]...
+
+/** 함수==주석 */
+function showPrimes(n) {
+  nextPrime: for (let i = 2; i < n; i++) {
+    for (let j = 2; j < i; j++) {
+      if (i % j == 0) continue nextPrime;
+    }
+    console.log(i);
+  }
+}
+
+// 함수는 한 번에 기능을 하나씩 하는 것으로 만들기
+function isPrime(n) {
+  for (let i = 2; i < n; i++) {
+    if (n % i == 0) {
+      return false;
+    }
+  }
+  return true;
+}
+
+function showPrimes2(n) {
+  for (let i = 2; i < n; i++) {
+    if (!isPrime(i)) continue;
+    console.log(i);
+  }
+}
+
+showPrimes(50);
+showPrimes2(50);
