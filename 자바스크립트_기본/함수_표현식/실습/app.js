@@ -10,3 +10,7 @@ let sayHi2 = function () {
 
 sayHi();
 sayHi2();
+
+/** 함수는 값 -- 값을 출력하는 방식으로 함수 코드를 출력 가능 */
+console.log(sayHi);
+console.log(sayHi2);
