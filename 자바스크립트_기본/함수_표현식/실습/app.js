@@ -24,3 +24,39 @@ console.log(func); // sayHi() {console.log('hello');}
 func();
 func1;
 sayHi();
+
+/** 콜백함수 -- 함수를 값처럼 인수로 전달하기 */
+function ask(question, yes, no) {
+  if (confirm(question)) {
+    yes();
+  } else {
+    no(); // confirm은 user의 답변에 따라 boolean 반환
+  }
+}
+
+function showOk() {
+  console.log('you have agreed');
+}
+
+function showCancel() {
+  console.log('you pushed the cancel button');
+}
+
+// ask('do you agree?', showOk, showCancel);
+// 전달한 함수를 필요한 경우 '나중에 호출(called back)'
+
+function ask2(question, yes, no) {
+  if (confirm(question)) yes();
+  else no();
+}
+
+// ask2(
+//   '동의하십니까?',
+//   // 익명함수. 변수에 할당되지 않았기 때문에, 이 코드 바깥에서는 접근 불가
+//   function () {
+//     console.log('동의하셨습니다');
+//   },
+//   function () {
+//     console.log('취소 버튼을 누르셨습니다');
+//   }
+// );
