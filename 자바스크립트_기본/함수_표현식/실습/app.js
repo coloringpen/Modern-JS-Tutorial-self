@@ -60,3 +60,22 @@ function ask2(question, yes, no) {
 //     console.log('취소 버튼을 누르셨습니다');
 //   }
 // );
+
+/** 함수 표현식 vs 함수 선언문 */
+// 함수 선언문
+function sum(a, b) {
+  return a + b;
+}
+
+// 함수 표현식
+let sum2 = function (a, b) {
+  return a + b;
+};
+
+/* 함수 선언문은 함수 선언문이 스크립트상 정의되기 전에도 호출할 수 있다 */
+
+sayHi3('John');
+
+function sayHi3(name) {
+  console.log(`Hello, ${name}`);
+}
