@@ -73,9 +73,21 @@ let sum2 = function (a, b) {
 };
 
 /* 함수 선언문은 함수 선언문이 스크립트상 정의되기 전에도 호출할 수 있다 */
-
 sayHi3('John');
 
 function sayHi3(name) {
   console.log(`Hello, ${name}`);
+}
+
+/* 함수 선언문의 스코프는 코드블럭 내부에 한정! 하지만 그 안에서는 호출의 위치가 자유롭다! */
+let age = prompt('How old are you?');
+
+if (age < 19) {
+  function welcome() {
+    console.log('Hi!');
+  }
+} else {
+  function welcome() {
+    console.log('');
+  }
 }
