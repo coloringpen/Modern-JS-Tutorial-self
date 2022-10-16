@@ -1,3 +1,5 @@
+'use strict';
+
 /** 함수 선언문 방식 -- 이것이 함수다! 선언하고 시작하는 방식 */
 function sayHi() {
   console.log('hello');
@@ -92,7 +94,7 @@ if (age < 19) {
   }
 }
 
-welcome4(); // 이거 왜 되지;;
+// welcome4(); // 이거 왜 되지;; 엄격모드가 아닐땐 된다!! 하지만 엄격 모드일땐 에러남
 
 let welcome2 = null;
 if (age < 19) {
