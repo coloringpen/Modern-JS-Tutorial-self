@@ -83,11 +83,36 @@ function sayHi3(name) {
 let age = prompt('How old are you?');
 
 if (age < 19) {
-  function welcome() {
-    console.log('Hi!');
+  function welcome4() {
+    console.log('Hi! welcome4');
   }
 } else {
-  function welcome() {
-    console.log('');
+  function welcome4() {
+    console.log('welcome');
   }
 }
+
+welcome4(); // 이거 왜 되지;;
+
+let welcome2 = null;
+if (age < 19) {
+  welcome2 = function () {
+    console.log('Hi!');
+  };
+} else {
+  welcome2 = function () {
+    console.log('Welcome');
+  };
+}
+
+let welcome1 =
+  age < 18
+    ? function () {
+        console.log('Hi');
+      }
+    : function () {
+        console.log('welecome');
+      };
+
+welcome1();
+welcome2();
