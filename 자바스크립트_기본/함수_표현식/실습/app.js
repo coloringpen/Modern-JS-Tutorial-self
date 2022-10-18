@@ -82,7 +82,7 @@ function sayHi3(name) {
 }
 
 /* 함수 선언문의 스코프는 코드블럭 내부에 한정! 하지만 그 안에서는 호출의 위치가 자유롭다! */
-let age = prompt('How old are you?');
+let age = 18; //prompt('How old are you?');
 
 if (age < 19) {
   function welcome4() {
@@ -118,3 +118,5 @@ let welcome1 =
 
 welcome1();
 welcome2();
+
+/** 콜백함수 */
