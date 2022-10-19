@@ -159,3 +159,61 @@ function ask(question, yes, no) {
 //     console.log('취소버튼을 누르셨습니다');
 //   }
 // );
+
+/** 함수 표현식 vs 함수 선언문 */
+/* 문법 */
+// 함수 선언문
+function sum3(a, b) {
+  return a + b;
+}
+
+// 함수 표현식
+let sum4 = function (a, b) {
+  return a + b;
+};
+
+/* 자바스크립트 엔진의 함수 생성 시기 */
+sayHi4('John');
+
+function sayHi4(name) {
+  console.log(`Hello, ${name}`);
+}
+
+// sayHi5(name);  Cannot access 'sayHi5' before initialization
+
+let sayHi5 = function (name) {
+  console.log(`Hello, ${name}`);
+};
+
+/* 스코프 */
+// let age2 = prompt('How old are you?', 18);
+
+// if (age2 < 18) {
+//   function welcome() {
+//     console.log('Hi!');
+//   }
+// } else {
+//   function welcome() {
+//     console.log('Welcome');
+//   }
+// }
+
+// welcome(); welcome is not defined at app.js:201:1
+
+let age3 = 16;
+
+if (age3 < 18) {
+  welcome(); // 실행됨
+
+  function welcome() {
+    console.log('Hi!');
+  }
+
+  welcome(); // 실행됨
+} else {
+  function welcome() {
+    console.log('Welcome');
+  }
+}
+
+// welcome();  welcome is not defined at app.js:219:1
