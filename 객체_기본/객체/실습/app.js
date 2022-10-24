@@ -44,3 +44,6 @@ const user5 = {
 
 user5.name = 'Pete';
 console.log(user5.name);
+
+/** 대괄호 표기법 */
+// user.likes birds = true 문법 에러
