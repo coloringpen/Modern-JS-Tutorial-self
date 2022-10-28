@@ -45,5 +45,20 @@ const user5 = {
 user5.name = 'Pete';
 console.log(user5.name);
 
-/** 대괄호 표기법 */
-// user.likes birds = true 문법 에러
+/** 대괄호 표기법 - 키에 어떤 문자열이 있던지 상관없이 동작 */
+// user5.likes birds = true 문법 에러
+let user6 = {};
+
+// set
+user6['like birds'] = true;
+
+// get
+console.log(user6['like birds']);
+
+// delete
+delete user6['like birds'];
+console.log(user6);
+
+let key = 'like birds';
+user6[key] = true;
+console.log(user6);
