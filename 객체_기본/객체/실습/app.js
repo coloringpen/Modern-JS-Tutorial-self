@@ -62,3 +62,5 @@ console.log(user6);
 let key = 'like birds';
 user6[key] = true;
 console.log(user6);
+
+/** dmdk.....*/
