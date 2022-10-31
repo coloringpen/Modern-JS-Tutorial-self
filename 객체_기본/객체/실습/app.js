@@ -59,8 +59,41 @@ console.log(user6['like birds']);
 delete user6['like birds'];
 console.log(user6);
 
+/* 대괄호 표기법 안에서 문자열 사용 : 문자열을 따옴표로 묶어야한다 */
+// 해당 표기가 문자열 '값'임을 표현하기 위해
+// 따옴표로 묶지 않는 경우
+//    유효한 변수 식별자 형태 : 변수를 찾으려 한다
+//    유효한 변수 식별자 형태 x : 그냥 문자열로서 대함
+
 let key = 'like birds';
 user6[key] = true;
 console.log(user6);
 
-/** dmdk.....*/
+/* 런타임 평가 이후 확정된 key변수로 프로퍼티 키 이용하기 */
+let user7 = {
+  name: 'John',
+  age: 36,
+};
+
+// let key2 = prompt('사용자의 어떤 정보를 얻고 싶으신가요?', 'name');
+
+// 변수로 접근
+// console.log(user7[key2]);
+
+let key3 = function () {
+  const finalKey = 1 ? 'age' : 'lol';
+  console.log(finalKey);
+  return finalKey;
+};
+
+console.log(user7[key3()]);
+// 대괄호 내부에는 어떤 표현식이든 쓸 수 있다
+
+// 점표기법은 이를 이용할 수 없다. 무조건 객체 내부의 문자열 키만 읽어오는 방식
+let user8 = {
+  name: 'John',
+  age: 30,
+};
+
+let key4 = 'name';
+console.log(user8.key4); // undefined. user8 내부에는 key4라는 프로퍼티 키가 없으므로
