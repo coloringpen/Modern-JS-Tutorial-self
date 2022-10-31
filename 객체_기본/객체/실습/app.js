@@ -97,3 +97,32 @@ let user8 = {
 
 let key4 = 'name';
 console.log(user8.key4); // undefined. user8 내부에는 key4라는 프로퍼티 키가 없으므로
+
+/** 계산된 프로퍼티 - 리터럴 프로퍼티 표기에 바로 대괄호 사용하기 */
+let fruit = 1 < 2 ? 'pear' : prompt('which fruit do you want to buy?', 'apple');
+
+let bag = {
+  [fruit]: 5, // 프로퍼티 키가 런타임에 할당되는 변수값에 따라 달라진다
+  // 프로퍼티 이름이 동적으로 바뀌는 것. 정적이지 않음!
+};
+
+console.log(bag[fruit]); // 전에 사용하던 것처럼 이렇게 또 읽어올수도 있음
+console.log(bag);
+
+/* 아래와 동일 - 변수를 런타임에 받아온 이후, 객체 프로퍼티로 저장하기*/
+let fruit2 =
+  1 < 2 ? 'pear' : prompt('which fruit do you want to buy?', 'apple');
+
+let bag2 = {};
+bag2[fruit2] = 5;
+
+console.log(bag2[fruit2]);
+console.log(bag2);
+
+/* 대괄호 내부에는 무슨 표현식이든 사용할 수 있다 */
+let fruit3 = 'apple';
+let bag3 = {
+  [fruit3 + 'computers']: 5,
+};
+
+console.log(bag3);
