@@ -126,3 +126,31 @@ let bag3 = {
 };
 
 console.log(bag3);
+
+/** 단축 프로퍼티 - 프로퍼티를 값을 기존변수에서 받아오기 */
+/* 프로퍼티 이름과 값 = 변수이름(파라미터) */
+function makeUser(name, age) {
+  return {
+    name: name, // name 변수값이 여기로 온다
+    age: age, // age 변수값이 여기로 온다
+  };
+}
+
+let user9 = makeUser('John', 30);
+console.log(user9.name);
+
+function makeUser2(name, age) {
+  return {
+    name, // 변수 name 자체가 프로퍼티화됨
+    age, // 변수 age 자체가 프로퍼티화됨
+  };
+}
+
+let user10 = makeUser2('John', 30);
+console.log(user10.name);
+
+/* 한 객체에서 일반 프로퍼티와 단축 프로퍼티 함께 사용도 가능 */
+let user11 = {
+  name, // name: name 과 같은
+  age: 30,
+};
