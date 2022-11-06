@@ -183,3 +183,29 @@ console.log(obj2['0']);
 let obj3 = {};
 obj.__proto__ = 5;
 console.log(obj.__proto__); // 원시값을 할당했는데 객체가 나옴!
+
+/** 'in' 연산자로 프로퍼티 존재 여부 확인하기 */
+/* undefined 이용 */
+let user13 = {};
+console.log(user.noSuchProperty === undefined); // true
+
+/* in 연산자 사용 */
+let user12 = {
+  name: 'John',
+  age: 30,
+  1: 12,
+};
+
+console.log('name' in user12);
+console.log('age' in user12);
+console.log(1 in user12); // 유효한 변수명이 아닌 경우, 따옴표 없이 검색해도 프로퍼티 지정 가능
+console.log('blablabla' in user12); // false
+
+/* in 연산자 사용 이유 */
+let obj13 = {
+  test: undefined,
+};
+
+console.log(obj.test); // undefined
+console.log(obj13.test === undefined); // true 프로퍼티가 존재하지 않는 것처럼 나옴
+console.log('test' in obj13); // true 이제 제대로 확인 가능
