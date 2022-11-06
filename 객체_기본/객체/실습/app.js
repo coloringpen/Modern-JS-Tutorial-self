@@ -1,3 +1,5 @@
+'use strict';
+
 /** 객체 */
 /* 만드는 방법 */
 let user = new Object(); // '객체 생성자' 문법
@@ -154,3 +156,23 @@ let user11 = {
   name, // name: name 과 같은
   age: 30,
 };
+
+/** 프로퍼티 이름의 제약사항*/
+// 예약어를 키로 사용해도 괜찮다
+let obj = {
+  for: 1,
+  let: 2,
+  return: 3,
+};
+
+console.log(obj.for + obj.let + obj.return);
+
+// 그 어떤 '문자열', 심볼형 값도 프로퍼티 키가 될 수 있다
+// 문자형이나 심볼형에 속하지 않은 값은 문자열로 자동 형변환됨
+
+let obj2 = {
+  0: 'test',
+};
+
+console.log(obj2[0]);
+console.log(obj2['0']);
