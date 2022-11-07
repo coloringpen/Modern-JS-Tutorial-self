@@ -209,3 +209,15 @@ let obj13 = {
 console.log(obj.test); // undefined
 console.log(obj13.test === undefined); // true 프로퍼티가 존재하지 않는 것처럼 나옴
 console.log('test' in obj13); // true 이제 제대로 확인 가능
+
+/** for...in 반복문 - 객체의 모든 키 순회하기*/
+let user14 = {
+  name: John,
+  age: 30,
+  isAdmin: true,
+};
+
+for (let key in user14) {
+  console.log(key);
+  console.log(user14[key]);
+}
