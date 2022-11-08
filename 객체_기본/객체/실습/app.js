@@ -212,7 +212,7 @@ console.log('test' in obj13); // true 이제 제대로 확인 가능
 
 /** for...in 반복문 - 객체의 모든 키 순회하기*/
 let user14 = {
-  name: John,
+  name: 'John',
   age: 30,
   isAdmin: true,
 };
@@ -221,3 +221,48 @@ for (let key in user14) {
   console.log(key);
   console.log(user14[key]);
 }
+
+/** 객체정렬방식 */
+/* 정수 프로퍼티는 자동 정렬 */
+let codes = {
+  49: '독일',
+  41: '스위스',
+  44: '영국',
+  1: '미국',
+};
+
+for (let code in codes) {
+  console.log(codes[code]);
+} // 미국 스위스 영국 독일 순으로 찍힘
+
+/* 정수 프로퍼티 : 변형없이 정수에서 왔다갔다 할 수 있는 문자열 */
+// 한번 문자열로 표현된 숫자를 숫자형으로 바꾸고
+// 소수점 떼버리고
+// 그걸 다시 문자열로 바꿨을 때 똑같은 숫자가 나와야함
+console.log(String(Math.trunc(Number('49')))); // 정수 프로퍼티!
+console.log(String(Math.trunc(Number('+49'))));
+console.log(String(Math.trunc(Number('1.2'))));
+
+/* 키가 정수가 아닌 경우, 작성된 숫서대로 프로퍼티 나열 */
+let user15 = {
+  name: 'John',
+  surname: 'Smith',
+};
+
+user15.age = 25;
+
+for (let prop in user15) {
+  console.log(prop);
+} // name surname age
+
+/* 숫자 정렬 순서를 임의대로 지정하고 싶다면, 정수 프로퍼티가 되지 않게 처리 */
+let codes1 = {
+  '+49': '독일',
+  '+41': '스위스',
+  '+44': '영국',
+  '+1': '미국',
+};
+
+for (let code in codes1) {
+  console.log(codes1[code]);
+} // 리터럴에 추가된 순서대로 '독일, 스위스, 영국, 미국' 출력
