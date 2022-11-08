@@ -5,3 +5,16 @@ let admin = user;
 
 admin.name = 'Pete';
 console.log(user.name);
+
+/** 참조에 의한 비교 */
+/* 객체 비교시 ==와 ===는 동일하게 동작 */
+/* 두 객체는 동일한 객체여야(참조값이 같아야) true 반환*/
+let a = {};
+let b = a;
+console.log(a == b); //true
+console.log(a === b); //true
+
+let a1 = {};
+let b1 = {};
+console.log(a1 == b1); //false
+console.log(a1 === b1); //false
