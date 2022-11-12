@@ -86,7 +86,7 @@ console.log(user6.sizes === clone6.sizes);
 user6.sizes.width++;
 console.log(clone6.sizes.width); // 51
 
-// 직접 구현해보는 깊은 복사
+// 직접 구현해보는 깊은 복사 -
 let clone7 = {};
 for (let key in user6) {
   if (typeof key === 'object') {
