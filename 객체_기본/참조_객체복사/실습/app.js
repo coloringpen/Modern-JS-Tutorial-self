@@ -100,3 +100,5 @@ for (let key in user6) {
 }
 
 console.log(clone7);
+
+// 오늘은,, 다른 걸 열심히 했다,,
