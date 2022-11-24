@@ -17,3 +17,8 @@ let user1 = {
 
 console.log(user1.name);
 console.log(user1.isAdmin);
+
+/** new.target과 생성자함수 */
+function User2() {
+  if(!new.target)
+}
