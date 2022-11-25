@@ -19,6 +19,12 @@ console.log(user1.name);
 console.log(user1.isAdmin);
 
 /** new.target과 생성자함수 */
-function User2() {
-  if(!new.target)
+function UserTwo() {
+  if (!new.target) {
+    return new UserTwo(name);
+  }
+  this.name = name;
 }
+
+let bora = UserTwo('bora');
+console.log(bora.name);
