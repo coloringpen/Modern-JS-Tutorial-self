@@ -33,3 +33,25 @@ function Usertwo(name) {
 
 let bora = Usertwo('bora');
 console.log(bora.name);
+
+/** 생성자 return문 */
+function BigUser() {
+  this.name = 'monkey';
+  return { name: '고질라' };
+}
+
+console.log(new BigUser().name);
+
+function SmallUser() {
+  this.name = 'monkey';
+  return;
+}
+
+console.log(new SmallUser().name);
+
+/** 좋은 문법은 아니지만 ()생략하고 호출가능 */
+let user2 = new User();
+let user3 = new User();
+
+console.log(user2);
+console.log(user3);
