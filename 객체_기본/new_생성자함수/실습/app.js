@@ -55,3 +55,14 @@ let user3 = new User();
 
 console.log(user2);
 console.log(user3);
+
+/** 생성자 내 메서드 */
+function User3(name) {
+  this.name = name;
+  this.sayHi = function () {
+    console.log('My name is ' + this.name);
+  };
+}
+
+let Bora = new User3('Bora Lee');
+Bora.sayHi();
