@@ -93,5 +93,5 @@
 
 /** 부적절한 '?' */
 
-let company = prompt('자바스크립트는 어떤 회사가 만들었을까요', '');
-company == 'Netscape' ? console.log('정답!') : console.log('오답!');
+// let company = prompt('자바스크립트는 어떤 회사가 만들었을까요', '');
+// company == 'Netscape' ? console.log('정답!') : console.log('오답!');
