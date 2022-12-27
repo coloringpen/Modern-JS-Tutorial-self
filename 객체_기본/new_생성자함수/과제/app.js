@@ -12,3 +12,8 @@ function B() {
 console.log(new A() == new B());
 
 /** 계산기 만들기 */
+function Calculator() {
+  this.read = function () {};
+  this.sum = function () {};
+  this.mul = function () {};
+}
