@@ -14,6 +14,13 @@ console.log(new A() == new B());
 /** 계산기 만들기 */
 function Calculator() {
   this.read = function () {};
-  this.sum = function () {};
-  this.mul = function () {};
+  this.sum = function (a, b) {
+    return a + b;
+  };
+  this.mul = function (a, b) {
+    return a * b;
+  };
 }
+const calculator1 = new Calculator();
+
+console.log(calculator1.sum(1, 2));
