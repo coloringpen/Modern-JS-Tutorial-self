@@ -56,4 +56,64 @@ function fib2(n) {
   return second;
 }
 
-//t
+/** 단일 연결 리스트 출력하기 */
+let list = {
+  value: 1,
+  next: {
+    value: 2,
+    next: {
+      value: 3,
+      next: {
+        value: 4,
+        next: null,
+      },
+    },
+  },
+};
+
+function prinListSelf(list) {
+  if (list === null) {
+    return;
+  } else {
+    console.log(list.value);
+    prinListSelf(list.next);
+  }
+}
+
+function printAnswerKey(list) {
+  console.log(list.value);
+  if (list.next) {
+    // 자연히 next가 null이면 작동 안됨,, 완전 깔끔 멋짐,,
+    printAnswerKey(list.next);
+  }
+}
+
+function prinListFor(list) {
+  // for of 사용하여 순회시, list은 not iterable이라고 뜸
+  let next = list;
+  while (next != null) {
+    // 특정 조건에 따른 반복문은 while!! 기억하기!!
+    console.log(next.value);
+    next = next.next;
+  }
+}
+
+/** 단일 연결 리스트를 역순으로 출력하기 */
+/* function prinListSelf2(list) {
+  // let reverseList = []; 여기에 넣으면!!! 재귀호출할때~~! 자꾸 여기 재실행돼서 배열 초기화됨!!
+  console.log(list);
+  if (list === null) {
+    for (let i = reverseList.length; i >= 0; i--) {
+      console.log(reverseList);
+    }
+  } else {
+    reverseList.push(list.value);
+    prinListSelf2(list.next);
+  }
+
+  // for (let i = reverseList.length; i >= 0; i--) { // 재귀할때 여기도 prinListself2의 일부가 되므로 의도한 것과는 다른 실행이 일어남
+  //   console.log(reverseList[i - 1]);
+  // }
+}
+
+prinListSelf2(list); 실패데스요,, */
