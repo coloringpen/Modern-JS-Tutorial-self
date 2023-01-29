@@ -117,3 +117,33 @@ function prinListFor(list) {
 }
 
 prinListSelf2(list); 실패데스요,, */
+
+function printReverseList(list) {
+  if (list.next) {
+    printReverseList(list.next);
+    // 여기 블록의 함수 진행이 끝나면 밖으로 넘어간다!!
+    // 함수 진행이 끝난다는 건, 여기 블록을 넘어가서 console.log(list.value)까지 이루어진다는 것
+  }
+  console.log(list.value);
+  // 가장 상위의 실행 컨덱스트가 없어지면,
+  // 그 이전에 멈췄던 실행 컨텍스트들이 다시 실행되면서
+  // 가장 깊은 value부터 읽어오게 된다!
+}
+
+printReverseList(list);
+
+function printReverseList2(list) {
+  let tempArr = [];
+  let tempList = list;
+
+  while (tempList) {
+    tempArr.push(tempList.value); // push 메서드 잘쓰기. 어떤 배열에서 정보를 가져오는지 잘 체크하기
+    tempList = tempList.next;
+  }
+
+  for (let i = tempArr.length - 1; i >= 0; i--) {
+    console.log(tempArr[i]);
+  }
+}
+
+printReverseList2(list);
