@@ -62,4 +62,14 @@ for (let i = 0; i < 3; i++) {
 
 // console.log(i); i is not defined
 
+function test1(func) {
+  console.log(func('good job') + ' and great');
+}
+
+test1(function you(word) {
+  return 'you did ' + word;
+});
+
+// you('happy'); 인수로 넘어간 곳 밖에서는 define되지 않았다고 뜸
+
 /** 중첩함수 - 함수 내부에서 선언한 함수 */
