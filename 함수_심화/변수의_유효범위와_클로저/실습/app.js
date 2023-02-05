@@ -8,7 +8,8 @@
 }
 
 // console.log(message); app.js:7 Uncaught ReferenceError: message is not defined
-hi('hi'); // 하지만 블록 내부에서 정의된 함수는 외부에서도 읽어올 수 있는듯?
+// hi('hi'); // 하지만 블록 내부에서 정의된 함수는 외부에서도 읽어올 수 있는듯?
+// 엄격모드에서는 Uncaught ReferenceError: hi is not defined
 
 function lol(champion) {
   function champs() {
@@ -84,3 +85,98 @@ function sayHiBye(firstName, lastName) {
   console.log('Hello, ' + getFullName());
   console.log('Bye, ' + getFullName());
 }
+
+function makeCounter() {
+  let count = 0;
+  return function () {
+    return count++;
+  };
+}
+
+let counter = makeCounter();
+let counter2 = makeCounter();
+
+/** 렉시컬 환경 */
+/* 단계1. 변수 */
+// 렉시컬 환경 : 실행 중인 함수, 코드 블록, 스크립트 전체가 갖는 내부 숨김 연관 객체
+
+/** garbage collection */
+function f() {
+  let value = 123;
+
+  return function () {
+    console.log(value);
+  };
+}
+
+let g = f();
+
+function f1() {
+  let value = Math.random();
+
+  return function () {
+    console.log(value);
+  };
+}
+
+let arr = [f(), f(), f()];
+
+function f2() {
+  let value = 123;
+
+  return function () {
+    console.log(value);
+  };
+}
+
+let g1 = f(); // g1이, 즉 중첩함수가 살아있는 동안 연관 렉시컬 환경도 메모리에 살아있음
+g1 = null; // 도달할 수 없는 상태. 이제 연관 렉시컬 환경들, f2의 렉시컬 환경도 메모리에서 삭제됨
+
+/** 최적화 프로세스 */
+function f3() {
+  let value = Math.random();
+
+  function g() {
+    debugger; // Uncaught ReferenceError: value is not defined
+    // 디버거로 여기에서 함수의 실행을 멈추고, console.log(value)를 추가
+  }
+
+  return g;
+}
+
+// let g2 = f3();
+// g2();
+
+// 아래 녀석들은 각각 la와 any를 디버깅 과정에서 콘솔에 찍어봤을때 undefined 에러가 난다
+// let la = 'same name, different variable';
+
+// function f4() {
+//   let la = 'the closest varible';
+
+//   function g() {
+//     debugger;
+//   }
+
+//   return g;
+// }
+
+// // let g3 = f4();
+// // g3();
+
+// console.log(la);
+
+let any = 3;
+
+// function myTest() {
+//   let any = 5;
+
+//   function nest() {
+//     debugger;
+//   }
+
+//   return nest;
+// }
+
+// let testNest = myTest();
+// console.log(testNest);
+// testNest();
