@@ -73,3 +73,14 @@ test1(function you(word) {
 // you('happy'); 인수로 넘어간 곳 밖에서는 define되지 않았다고 뜸
 
 /** 중첩함수 - 함수 내부에서 선언한 함수 */
+/* 코드를 정돈하는 데 사용 가능 */
+
+function sayHiBye(firstName, lastName) {
+  // helper 중첩함수
+  function getFullName() {
+    return firstName + ' ' + lastName;
+  }
+
+  console.log('Hello, ' + getFullName());
+  console.log('Bye, ' + getFullName());
+}
