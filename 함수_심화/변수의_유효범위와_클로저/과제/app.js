@@ -53,3 +53,23 @@ console.log(counter());
 
 console.log(counter1());
 console.log(counter1());
+
+/** counter 객체 */
+
+function Counter() {
+  let count = 0;
+
+  this.up = function () {
+    return ++count;
+  };
+
+  this.down = function () {
+    return --count;
+  };
+}
+
+let counter2 = new Counter();
+
+console.log(counter2.up());
+console.log(counter2.up());
+console.log(counter2.down());
