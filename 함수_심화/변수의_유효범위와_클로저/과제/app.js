@@ -131,3 +131,5 @@ function inArray(arr) {
 
 console.log(arr.filter(inBetween(3, 6)));
 console.log(arr.filter(inArray([2, 5, 11])));
+
+/** 필드를 기준으로 정렬하기 */
