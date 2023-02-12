@@ -1,3 +1,5 @@
+'use strict';
+
 /** Does a function pickup latest changes? */
 let hisName = 'John';
 
@@ -133,3 +135,43 @@ console.log(arr.filter(inBetween(3, 6)));
 console.log(arr.filter(inArray([2, 5, 11])));
 
 /** 필드를 기준으로 정렬하기 */
+let users = [
+  {
+    name1: 'John',
+    age: 20,
+    surname: 'Johnson',
+  },
+  {
+    name1: 'Pete',
+    age: 18,
+    surname: 'Peterson',
+  },
+  {
+    name1: 'Ann',
+    age: 19,
+    surname: 'Hathaway',
+  },
+];
+
+// // 이름을 기준으로 정렬(Ann, John,Pete)
+console.log(users.sort((a, b) => (a.name1 > b.name1 ? 1 : -1)));
+
+// 나이를 기준으로 정렬(Pete, Ann, John)
+console.log(users.sort((a, b) => (a.age > b.age ? 1 : -1)));
+console.log(users);
+
+function byField(keyName) {
+  return (a, b) => (a[keyName] > b[keyName] ? 1 : -1);
+}
+
+console.log(users.sort(byField('name1'))); // sort를 맨 마지막에 하는 것에 따라 다르다!
+// console.log(users.sort(byField('age')));
+// 맨 마지막 sorting한 결과로 모든 콘솔이 찍힘
+// console.log도 비동기적으로 움직이는 듯,,
+
+let a = 1;
+
+console.log((a += 1));
+console.log((a += 1));
+console.log((a += 1));
+console.log(a);
