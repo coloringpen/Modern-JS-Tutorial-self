@@ -273,15 +273,13 @@ It's important to keep in mind that in-place methods modify the original array d
 function makeArmy() {
   let shooters = [];
 
-  let i = 0;
-  while (i < 10) {
-    let i2 = i;
+  // remeber that the '()' of for iteration is the set of the block
+  for (let i = 0; i < 10; i++) {
     let shooter = function () {
-      console.log(i2);
+      console.log(i);
     };
 
     shooters.push(shooter);
-    i++;
   }
 
   return shooters;
