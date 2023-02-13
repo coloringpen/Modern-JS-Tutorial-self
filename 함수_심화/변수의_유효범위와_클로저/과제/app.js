@@ -197,9 +197,96 @@ const array1 = [1, 2, 3, 4];
 console.log(array1.fill(0, 2, 4));
 console.log(array1.fill(5, 1));
 console.log(array1.fill(6));
+/* they only show
+Array(4)
+0
+: 
+6
+1
+: 
+6
+2
+: 
+6
+3
+: 
+6
+length
+: 
+4
+*/
 
 const months = ['Jan', 'March', 'April', 'June'];
+/* they onsly show
+0
+: 
+"Jan"
+1
+: 
+"Feb"
+2
+: 
+"March"
+3
+: 
+"April"
+4
+: 
+"May"*/
 months.splice(1, 0, 'Feb');
 console.log(months);
 months.splice(4, 1, 'May');
 console.log(months);
+
+// Each method's console.logs are all same, just showing the final execution.
+/* reply of chatGPT
+In-place methods in JavaScript are methods that modify the original array without creating a new array to hold the modified values. Instead, they modify the existing array. Some common in-place methods in JavaScript include:
+
+sort(): Sorts the elements of an array in place and returns the sorted array.
+
+reverse(): Reverses the order of the elements in an array in place and returns the reversed array.
+
+splice(): Adds and removes elements from an array in place. It can be used to add elements to an array, remove elements from an array, or both.
+
+fill(): Fills elements of an array with a static value in place.
+
+pop(): Removes the last element from an array in place and returns the removed element.
+
+shift(): Removes the first element from an array in place and returns the removed element.
+
+In-place methods have the following features:
+
+They modify the original array.
+
+They do not create a new array to hold the modified values.
+
+They often return the modified array or a subset of the modified array.
+
+They can alter the length of the array.
+
+They can have side effects, such as changing the original array and other variables that reference the same array.
+
+It's important to keep in mind that in-place methods modify the original array directly and can have side effects, so they should be used with caution.
+*/
+
+/** 함수를 사용해 군대 만들기 */
+function makeArmy() {
+  let shooters = [];
+
+  let i = 0;
+  while (i < 10) {
+    let i2 = i;
+    let shooter = function () {
+      console.log(i2);
+    };
+
+    shooters.push(shooter);
+    i++;
+  }
+
+  return shooters;
+}
+
+let army = makeArmy();
+army[0]();
+army[5]();
