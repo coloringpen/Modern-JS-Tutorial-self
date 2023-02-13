@@ -154,7 +154,10 @@ let users = [
 ];
 
 // // 이름을 기준으로 정렬(Ann, John,Pete)
-console.log(users.sort((a, b) => (a.name1 > b.name1 ? 1 : -1)));
+console.log(
+  users.sort((a, b) => (a.name1 > b.name1 ? 1 : -1)),
+  'sort'
+);
 
 // 나이를 기준으로 정렬(Pete, Ann, John)
 console.log(users.sort((a, b) => (a.age > b.age ? 1 : -1)));
@@ -165,13 +168,38 @@ function byField(keyName) {
 }
 
 console.log(users.sort(byField('name1'))); // sort를 맨 마지막에 하는 것에 따라 다르다!
-// console.log(users.sort(byField('age')));
-// 맨 마지막 sorting한 결과로 모든 콘솔이 찍힘
-// console.log도 비동기적으로 움직이는 듯,,
+console.log(users.sort(byField('age')));
+// 맨 마지막 sorting한 결과로 모든 콘솔이 찍힘 why?
 
 let a = 1;
 
-console.log((a += 1));
+console.log((a += 1), 'push');
 console.log((a += 1));
 console.log((a += 1));
 console.log(a);
+
+let testobj = [1, 2, 3, 4];
+
+testobj.push(1);
+console.log(testobj);
+testobj.push(2);
+console.log(testobj);
+testobj.push('finish');
+console.log(testobj);
+
+console.log(testobj.reverse(), 'reverse');
+console.log(testobj.reverse(), 'reverse');
+console.log(testobj.reverse(), 'reverse');
+console.log(testobj.reverse(), 'reverse');
+
+const array1 = [1, 2, 3, 4];
+
+console.log(array1.fill(0, 2, 4));
+console.log(array1.fill(5, 1));
+console.log(array1.fill(6));
+
+const months = ['Jan', 'March', 'April', 'June'];
+months.splice(1, 0, 'Feb');
+console.log(months);
+months.splice(4, 1, 'May');
+console.log(months);
