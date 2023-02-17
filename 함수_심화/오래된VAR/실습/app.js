@@ -48,3 +48,29 @@ function slice(arr, startIndex, endIndex) {
 }
 
 console.log(count(animals));
+
+for (var i = 0; i < 10; i++) {
+  console.log(i);
+}
+
+console.log(i, '여기서도 확인가능!');
+
+function sayHi() {
+  if (true) {
+    var phrase2 = 'Hello';
+
+    console.log(phrase2);
+  }
+}
+
+sayHi();
+// console.log(phrase2); // ReferenceError: phrase2 is not defined
+
+/** var tolerates redeclarations */
+let user;
+// let user; SyntaxError: Identifier 'user' has already been declared
+
+var user1;
+var user1 = 'John';
+
+console.log(user1);
