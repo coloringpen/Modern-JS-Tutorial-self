@@ -74,3 +74,5 @@ var user1;
 var user1 = 'John';
 
 console.log(user1);
+
+let truefromheart = 0000
