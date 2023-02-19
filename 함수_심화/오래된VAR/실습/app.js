@@ -75,4 +75,23 @@ var user1 = 'John';
 
 console.log(user1);
 
-let truefromheart = 0000
+/** 선언하기 전 사용할 수 있는 'var' */
+function sayHi(){
+  phrase = "Hello"
+
+  console.log(phrase)
+  
+  var phrase
+}
+
+sayHi()
+
+/* 위는 아래와 마찬가지이다 
+function sayHi(){
+  var phrase
+  phrase = "Hello"
+  
+  console.log(phrase)
+}
+
+*/
